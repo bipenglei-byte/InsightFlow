@@ -2,6 +2,12 @@
 
 > AI User Research & Product Insights Agent
 
+## Live Demo
+
+- CloudBase: https://insightflow-296013-11-1467319446.sh.run.tcloudbase.com
+- GitHub: https://github.com/bipenglei-byte/InsightFlow
+- Runtime status: Demo Mode; Live AI remains disabled until rotated provider credentials are configured server-side.
+
 InsightFlow 是一个面向产品经理的 AI 决策支持平台：将 CSV/XLSX 中的非结构化用户反馈转换为可追溯的痛点、用户需求、需求优先级、产品机会和可编辑 PRD 草稿。
 
 **Portfolio / Case Study Project** — 从产品定义、PRD、Figma、MVP、AI Pipeline 到 Evaluation 的端到端实践。
@@ -148,4 +154,3 @@ pnpm audit:release
 - [Agent Design](./03_AI/Agent_Design.md)
 - [AI Output Schema](./03_AI/AI_Output_Schema.md)
 - [Evaluation](./03_AI/Evaluation.md)
-

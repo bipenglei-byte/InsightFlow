@@ -14,30 +14,32 @@ Prepare InsightFlow for a public GitHub release and Tencent CloudBase Run deploy
 
 ## 3. Deployment
 
-Status: deployment configuration ready; remote deployment pending CloudBase authentication and environment selection.
+Status: deployed successfully to Tencent CloudBase Run. Service `insightflow`, version `insightflow-002`, receives 100% of traffic in environment `nova-d6g4wwan76ac55048`.
 
 ## 4. Deployment URL
 
-Pending deployment. No URL is claimed before a successful public health check.
+https://insightflow-296013-11-1467319446.sh.run.tcloudbase.com
+
+Public checks returned HTTP 200 for `/api/health`, `/dashboard`, `/requirements`, `/prd/search-optimization`, and `/states`.
 
 ## 5. Demo Mode
 
-Local production build and screenshot routes verified. Demo Mode requires no external provider and covers the Upload-to-PRD flow.
+Local and deployed routes were verified. Demo Mode requires no external provider and covers the Upload-to-PRD flow. The deployed health endpoint reports `mode: demo`.
 
 ## 6. Live AI Status
 
-The existing OpenAI-compatible pipeline and Day 6 evaluations use SiliconFlow with `Qwen/Qwen3.5-4B`. Day 7 has not re-run a paid Live AI batch yet. Credentials remain in ignored `.env.local` and are not included in release artifacts.
+The existing OpenAI-compatible pipeline and Day 6 evaluations use SiliconFlow with `Qwen/Qwen3.5-4B`. CloudBase does not currently contain the provider runtime variables, so the public service truthfully remains in Demo Mode. The previously shared key should be rotated before a new secret is entered in the CloudBase console.
 
 ## 7. GitHub Cleanup
 
 - Public root README created
 - Repository-level ignore rules created
 - Build output, dependencies, environment files, logs, and deployment state excluded
-- Public GitHub repository creation pending authenticated publication
+- Public GitHub repository published at https://github.com/bipenglei-byte/InsightFlow
 
 ## 8. Security Check
 
-Release audit result: 130 text files scanned, 0 secret findings, 0 private-path findings. `.env.local` is confirmed ignored. The previously shared provider key should still be rotated because it appeared in chat history.
+Final release audit result: 133 text files scanned, 0 secret findings, 0 private-path findings. `.env.local` is ignored and the successful deployment used a clean Git archive, excluding local environment files and build output. The previously shared provider key should be rotated because it appeared in chat history.
 
 ## 9. Root README
 
@@ -63,26 +65,23 @@ The full case study, short case study, project summary, and AI architecture diag
 - Next.js production build: passed; 9 routes generated, including `/api/health`
 - Screenshot generation: 10 files created
 - Release audit: passed
-- Docker CLI: installed
-- Docker image build: not executed successfully because the local Docker Desktop Linux engine was not running
+- Docker CLI: installed; the local Docker Desktop Linux engine was unavailable
+- CloudBase remote Docker build: passed and deployed successfully
 
 ## 14. Known Limitations
 
-- CloudBase Run deployment and public URL are pending
-- GitHub public repository is pending
-- Docker image awaits either a running local daemon or CloudBase remote build
+- Public deployment currently runs in Demo Mode; CloudBase Live AI secrets are not configured
+- The previously shared AI key should be rotated before production use
 - Human qualitative evaluation and PRD review remain pending
 - Confidence is not calibrated; clustering remains MVP-level
 - No production persistence, durable queue, authentication, or customer usage data
 
 ## 15. Public Repository Readiness
 
-The release candidate is locally prepared, documented, scanned, and buildable. It must not be described as published until GitHub creation/push succeeds.
+The repository is public at https://github.com/bipenglei-byte/InsightFlow and the application is deployed to CloudBase Run.
 
 ## 16. Remaining Work
 
-1. Authenticate the GitHub account and create public repository `InsightFlow`.
-2. Push the verified release branch.
-3. Authenticate CloudBase CLI and select the intended environment.
-4. Deploy service `insightflow`, configure runtime secrets, and validate the generated URL.
-5. Replace pending deployment statements with verified remote facts and push the final report.
+1. Rotate the previously shared AI provider key.
+2. Add the rotated secret and non-secret provider variables in the CloudBase service configuration when Live AI is required.
+3. Complete the pending human qualitative evaluation and PRD review.

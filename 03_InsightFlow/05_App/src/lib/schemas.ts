@@ -1,0 +1,5 @@
+import {z} from "zod";
+export const projectSchema=z.object({projectName:z.string().trim().min(1),productName:z.string().trim().min(1),productType:z.string(),analysisGoal:z.string().trim().min(1),dataSource:z.string(),language:z.string()});
+export const feedbackSchema=z.object({id:z.string().min(1),content:z.string().min(1),sentiment:z.enum(["positive","neutral","negative","mixed"]),sentimentScore:z.number().min(-1).max(1),severity:z.enum(["critical","high","medium","low"]),confidence:z.number().min(0).max(100),painPointId:z.string().min(1)}).passthrough();
+export const painPointSchema=z.object({id:z.string(),supportingFeedbackIds:z.array(z.string()).min(1),confidence:z.number().min(0).max(100)}).passthrough();
+export const requirementSchema=z.object({id:z.string(),painPointId:z.string(),frequencyScore:z.number().min(0).max(100),severityScore:z.number().min(0).max(100),impactScore:z.number().min(0).max(100),businessValue:z.number().min(0).max(100),confidenceScore:z.number().min(0).max(100),priority:z.enum(["P0","P1","P2","P3"]),aiPriority:z.enum(["P0","P1","P2","P3"]),manualPriority:z.enum(["P0","P1","P2","P3"]).nullable()}).passthrough();

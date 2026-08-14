@@ -1,0 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export type LiveAnalysis={analysisId?:string;status?:string;feedbackResults:any[];painPoints:any[];requirements:any[];failures:any[];telemetry?:any};
+export const percentConfidence=(value:number)=>Math.round(value<=1?value*100:value);
+export function mergeAnalysisResults(base:LiveAnalysis,retry:LiveAnalysis):LiveAnalysis{const feedback=new Map([...base.feedbackResults,...retry.feedbackResults].map(x=>[x.id,x]));const resolved=new Set(retry.feedbackResults.map(x=>x.id));const failures=[...base.failures.filter(x=>!resolved.has(x.feedbackId)),...retry.failures];return {...base,...retry,feedbackResults:[...feedback.values()],painPoints:retry.painPoints.length?retry.painPoints:base.painPoints,requirements:retry.requirements.length?retry.requirements:base.requirements,failures,status:failures.length?"partial_failure":"complete"}}
+export function readLiveAnalysis():LiveAnalysis|null{if(typeof window==="undefined")return null;try{return JSON.parse(sessionStorage.getItem("insightflow-analysis")||"null")}catch{return null}}

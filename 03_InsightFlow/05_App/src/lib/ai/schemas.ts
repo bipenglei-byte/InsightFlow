@@ -1,0 +1,10 @@
+import {z} from "zod";
+export const category=z.enum(["feature_request","bug","performance","ux","pricing","content","customer_service","other"]);
+export const intent=z.enum(["complaint","suggestion","question","praise","request","other"]);
+export const sentiment=z.enum(["positive","neutral","negative"]); export const severity=z.enum(["critical","high","medium","low"]);
+export const FeedbackAnalysisSchema=z.object({category,intent,sentiment,sentimentScore:z.number().min(-1).max(1),feature:z.string().min(1),severity,summary:z.string().min(1),painPoint:z.string().min(1),userNeed:z.string().min(1),confidence:z.number().min(0).max(1)}).strict();
+export const PainPointAISchema=z.object({id:z.string(),name:z.string(),description:z.string(),subtopics:z.array(z.string()),supportingFeedbackIds:z.array(z.string()).min(1),confidence:z.number().min(0).max(1)}).strict();
+export const RequirementAISchema=z.object({userNeed:z.string(),requirement:z.string(),requirementType:z.enum(["optimization","new_feature","bug_fix","policy","content","other"]),impactScore:z.number().min(0).max(100),confidenceScore:z.number().min(0).max(100)}).strict();
+export const OpportunitySchema=z.object({insight:z.string(),opportunity:z.string(),solutionDirections:z.array(z.string()).min(1).max(5),risks:z.array(z.string()).max(5)}).strict();
+export const PRDSchema=z.object({background:z.string(),problemStatement:z.string(),userEvidence:z.string(),userNeed:z.string(),productGoal:z.string(),successMetrics:z.string(),userStories:z.string(),functionalRequirements:z.string(),edgeCases:z.string(),analytics:z.string(),acceptanceCriteria:z.string()}).strict();
+export type FeedbackAnalysis=z.infer<typeof FeedbackAnalysisSchema>;

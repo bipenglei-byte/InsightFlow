@@ -1,0 +1,53 @@
+{
+  "name": "insightflow-app",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test src/lib/*.test.ts src/lib/ai/*.test.ts src/lib/evaluation/*.test.ts src/app/api/health/*.test.ts"
+    ,"audit:release": "powershell -ExecutionPolicy Bypass -File scripts/release-audit.ps1"
+    ,"eval:feedback": "node --env-file-if-exists=.env.local --experimental-strip-types scripts/evaluation/evaluate-feedback.ts"
+    ,"eval:v1": "pnpm eval:feedback --prompt=v1"
+    ,"eval:v2": "pnpm eval:feedback --prompt=v2"
+    ,"eval:v3": "pnpm eval:feedback --prompt=v3"
+    ,"eval:compile": "node --experimental-strip-types scripts/evaluation/compile-results.ts"
+    ,"eval:proxy-review": "node --experimental-strip-types scripts/evaluation/score-proxy-review.ts"
+  },
+  "dependencies": {
+    "next": "16.3.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "@hookform/resolvers": "latest",
+    "@radix-ui/react-dialog": "latest",
+    "@radix-ui/react-slider": "latest",
+    "@radix-ui/react-slot": "latest",
+    "@radix-ui/react-tooltip": "latest",
+    "class-variance-authority": "latest",
+    "clsx": "latest",
+    "lucide-react": "latest",
+    "papaparse": "latest",
+    "react-hook-form": "latest",
+    "recharts": "latest",
+    "tailwind-merge": "latest",
+    "xlsx": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.1",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "@types/papaparse": "latest",
+    "vitest": "latest"
+  },
+  "packageManager": "pnpm@10.34.5"
+}

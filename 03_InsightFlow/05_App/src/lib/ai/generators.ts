@@ -1,0 +1,3 @@
+import type {AIProvider} from "./provider"; import {OpportunitySchema,PRDSchema} from "./schemas"; import {opportunitySystem,prdSystem} from "./prompts";
+export async function generateOpportunity(provider:AIProvider,input:unknown){return (await provider.generateStructured({systemPrompt:opportunitySystem,userPrompt:JSON.stringify(input),schema:OpportunitySchema,schemaName:"opportunity",temperature:.2})).data}
+export async function generatePRD(provider:AIProvider,input:unknown){return (await provider.generateStructured({systemPrompt:prdSystem,userPrompt:JSON.stringify(input),schema:PRDSchema,schemaName:"prd",temperature:.2})).data}

@@ -12,7 +12,7 @@ InsightFlow uses CloudBase Run because the Next.js application includes server-s
 - Health endpoint: `/api/health`
 - Development portfolio environment: minimum instances `0`
 - Environment: `nova-d6g4wwan76ac55048`
-- Deployed version: `insightflow-002`
+- Deployed version: `insightflow-003`
 - Public address: https://insightflow-296013-11-1467319446.sh.run.tcloudbase.com
 - Verified runtime mode: Demo Mode
 

@@ -95,3 +95,4 @@ The repository is public at https://github.com/bipenglei-byte/InsightFlow and th
 - Live AI prompts request Simplified Chinese descriptive fields while retaining controlled enum values and feedback IDs.
 - Browser QA covered 13 routes at 1440px: 0 forbidden English UI strings and 0 detected layout overflows.
 - Ten Chinese demo screenshots were regenerated.
+- CloudBase version `insightflow-003` was deployed with 100% traffic. `/api/health`, `/dashboard`, `/requirements`, `/prd/search-optimization`, and `/states` returned HTTP 200 and their expected Chinese markers.

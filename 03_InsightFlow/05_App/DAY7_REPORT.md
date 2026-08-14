@@ -39,7 +39,7 @@ The existing OpenAI-compatible pipeline and Day 6 evaluations use SiliconFlow wi
 
 ## 8. Security Check
 
-Final release audit result: 133 text files scanned, 0 secret findings, 0 private-path findings. `.env.local` is ignored and the successful deployment used a clean Git archive, excluding local environment files and build output. The previously shared provider key should be rotated because it appeared in chat history.
+Final release audit result: 138 text files scanned, 0 secret findings, 0 private-path findings. `.env.local` is ignored and the successful deployment used a clean Git archive, excluding local environment files and build output. The previously shared provider key should be rotated because it appeared in chat history.
 
 ## 9. Root README
 
@@ -85,3 +85,13 @@ The repository is public at https://github.com/bipenglei-byte/InsightFlow and th
 1. Rotate the previously shared AI provider key.
 2. Add the rotated secret and non-secret provider variables in the CloudBase service configuration when Live AI is required.
 3. Complete the pending human qualitative evaluation and PRD review.
+
+## 17. Chinese Interface Release
+
+- Global navigation, dashboard, projects, upload, field mapping, processing, analysis, pain points, evidence, requirements, priority review, opportunities, PRD, empty states, loading states, and error states are localized in Simplified Chinese.
+- Domain enum values remain unchanged in APIs, schemas, storage, and tests; the UI uses centralized Chinese display mappings.
+- Mock summaries, insights, pain points, requirements, opportunities, and PRD content are Chinese.
+- Uploaded feedback and `originalText` remain untouched to preserve Evidence First traceability.
+- Live AI prompts request Simplified Chinese descriptive fields while retaining controlled enum values and feedback IDs.
+- Browser QA covered 13 routes at 1440px: 0 forbidden English UI strings and 0 detected layout overflows.
+- Ten Chinese demo screenshots were regenerated.

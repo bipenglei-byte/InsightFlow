@@ -12,6 +12,8 @@ InsightFlow 是一个面向产品经理的 AI 决策支持平台，将 CSV/XLSX 
 - GitHub: https://github.com/bipenglei-byte/InsightFlow
 - Current runtime mode: Demo Mode (the complete mock-data flow is available; server-side Live AI credentials are not configured in CloudBase)
 
+The interactive product interface is fully localized in Simplified Chinese. Real uploaded feedback remains in its original language so Evidence First traceability is preserved.
+
 ## Why
 
 产品团队真正的瓶颈不是收集反馈，而是把大量非结构化信息转换为可信的产品决策。InsightFlow 通过 `Upload → Analyze → Understand → Prioritize → Act` 建立端到端闭环。

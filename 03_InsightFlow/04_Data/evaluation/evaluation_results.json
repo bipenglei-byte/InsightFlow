@@ -1,0 +1,126 @@
+{
+  "datasetVersion": "evaluation-dataset-v1",
+  "sampleCount": 100,
+  "provider": "siliconflow",
+  "model": "Qwen/Qwen3.5-4B",
+  "temperature": 0.1,
+  "promptVersions": [
+    "feedback-analyzer-v1",
+    "feedback-analyzer-v2",
+    "feedback-analyzer-v3"
+  ],
+  "runs": {
+    "v1": {
+      "runDate": "2026-08-14T07:31:38.742Z",
+      "sampleCount": 100,
+      "categoryAccuracy": 0.66,
+      "categoryMacroF1": 0.6059357309357309,
+      "intentAccuracy": 0.13,
+      "sentimentAccuracy": 0.82,
+      "sentimentMacroF1": 0.8025101513473607,
+      "severityAccuracy": 0.73,
+      "severityMeanDistance": 0.27,
+      "schemaFailureRate": 0,
+      "confidence": [
+        {
+          "confidenceBucket": "0.9–1.0",
+          "sampleCount": 51,
+          "actualAccuracy": 0.803921568627451
+        },
+        {
+          "confidenceBucket": "0.8–0.89",
+          "sampleCount": 38,
+          "actualAccuracy": 0.6578947368421053
+        },
+        {
+          "confidenceBucket": "0.7–0.79",
+          "sampleCount": 0,
+          "actualAccuracy": null
+        },
+        {
+          "confidenceBucket": "<0.7",
+          "sampleCount": 11,
+          "actualAccuracy": 0
+        }
+      ]
+    },
+    "v2": {
+      "runDate": "2026-08-14T07:33:07.064Z",
+      "sampleCount": 100,
+      "categoryAccuracy": 0.66,
+      "categoryMacroF1": 0.5569248473710716,
+      "intentAccuracy": 0.84,
+      "sentimentAccuracy": 0.93,
+      "sentimentMacroF1": 0.892579904974947,
+      "severityAccuracy": 0.73,
+      "severityMeanDistance": 0.28,
+      "schemaFailureRate": 0,
+      "confidence": [
+        {
+          "confidenceBucket": "0.9–1.0",
+          "sampleCount": 90,
+          "actualAccuracy": 0.7333333333333333
+        },
+        {
+          "confidenceBucket": "0.8–0.89",
+          "sampleCount": 5,
+          "actualAccuracy": 0
+        },
+        {
+          "confidenceBucket": "0.7–0.79",
+          "sampleCount": 0,
+          "actualAccuracy": null
+        },
+        {
+          "confidenceBucket": "<0.7",
+          "sampleCount": 5,
+          "actualAccuracy": 0
+        }
+      ]
+    },
+    "v3": {
+      "runDate": "2026-08-14T07:34:12.255Z",
+      "sampleCount": 100,
+      "categoryAccuracy": 0.7,
+      "categoryMacroF1": 0.614474257500823,
+      "intentAccuracy": 0.85,
+      "sentimentAccuracy": 0.95,
+      "sentimentMacroF1": 0.9218508042037453,
+      "severityAccuracy": 0.75,
+      "severityMeanDistance": 0.25,
+      "schemaFailureRate": 0,
+      "confidence": [
+        {
+          "confidenceBucket": "0.9–1.0",
+          "sampleCount": 87,
+          "actualAccuracy": 0.7816091954022989
+        },
+        {
+          "confidenceBucket": "0.8–0.89",
+          "sampleCount": 7,
+          "actualAccuracy": 0.14285714285714285
+        },
+        {
+          "confidenceBucket": "0.7–0.79",
+          "sampleCount": 1,
+          "actualAccuracy": 0
+        },
+        {
+          "confidenceBucket": "<0.7",
+          "sampleCount": 5,
+          "actualAccuracy": 0.2
+        }
+      ]
+    }
+  },
+  "bestPrompt": {
+    "version": "feedback-analyzer-v3",
+    "basis": "Best overall automatic metrics: highest category accuracy, category macro F1, intent accuracy, sentiment accuracy, and severity accuracy; zero schema failures."
+  },
+  "humanEvaluation": {
+    "hallucination": "pending",
+    "painPoint": "pending",
+    "userNeed": "pending",
+    "prd": "not_tested"
+  }
+}

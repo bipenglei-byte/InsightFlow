@@ -1,0 +1,11 @@
+{
+  "reviewerType": "AI_PROXY",
+  "sampleCount": 100,
+  "painPointAverage": 1.45,
+  "painPointNormalized": 0.725,
+  "userNeedAverage": 1.4,
+  "userNeedNormalized": 0.7,
+  "hallucinatedSamples": 7,
+  "hallucinationRate": 0.07,
+  "disclaimer": "Model-assisted proxy review; not human evaluation. Preserve manual_review_v3.csv for independent human scoring."
+}

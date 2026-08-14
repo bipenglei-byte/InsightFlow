@@ -1,0 +1,9 @@
+gold_label,feature_request,bug,performance,ux,pricing,content,customer_service,other
+feature_request,14,0,0,2,0,0,0,0
+bug,0,11,5,4,0,0,0,0
+performance,0,0,16,0,0,0,0,0
+ux,0,0,0,11,1,0,0,0
+pricing,0,4,0,2,4,2,0,0
+content,0,0,0,3,0,9,0,0
+customer_service,0,0,2,3,2,0,0,1
+other,0,0,3,0,0,0,0,1

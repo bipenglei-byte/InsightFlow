@@ -1,0 +1,136 @@
+{
+  "datasetVersion": "evaluation-dataset-v1",
+  "promptVersion": "feedback-analyzer-v1",
+  "provider": "siliconflow",
+  "model": "Qwen/Qwen3.5-4B",
+  "temperature": 0.1,
+  "runDate": "2026-08-14T07:31:38.742Z",
+  "sampleCount": 100,
+  "validCount": 100,
+  "schemaFailureRate": 0,
+  "category": {
+    "accuracy": 0.66,
+    "macroF1": 0.6059357309357309,
+    "perClass": [
+      {
+        "label": "feature_request",
+        "precision": 0.4444444444444444,
+        "recall": 1,
+        "f1": 0.6153846153846153,
+        "support": 16
+      },
+      {
+        "label": "bug",
+        "precision": 0.6153846153846154,
+        "recall": 0.4,
+        "f1": 0.4848484848484849,
+        "support": 20
+      },
+      {
+        "label": "performance",
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "support": 16
+      },
+      {
+        "label": "ux",
+        "precision": 1,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "support": 12
+      },
+      {
+        "label": "pricing",
+        "precision": 0.8888888888888888,
+        "recall": 0.6666666666666666,
+        "f1": 0.761904761904762,
+        "support": 12
+      },
+      {
+        "label": "content",
+        "precision": 0.42857142857142855,
+        "recall": 0.5,
+        "f1": 0.4615384615384615,
+        "support": 12
+      },
+      {
+        "label": "customer_service",
+        "precision": 1,
+        "recall": 0.75,
+        "f1": 0.8571428571428571,
+        "support": 8
+      },
+      {
+        "label": "other",
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "support": 4
+      }
+    ]
+  },
+  "intent": {
+    "accuracy": 0.13
+  },
+  "sentiment": {
+    "accuracy": 0.82,
+    "macroF1": 0.8025101513473607,
+    "perClass": [
+      {
+        "label": "positive",
+        "precision": 1,
+        "recall": 0.7916666666666666,
+        "f1": 0.8837209302325582,
+        "support": 24
+      },
+      {
+        "label": "neutral",
+        "precision": 0.5172413793103449,
+        "recall": 0.9375,
+        "f1": 0.6666666666666667,
+        "support": 16
+      },
+      {
+        "label": "negative",
+        "precision": 0.9230769230769231,
+        "recall": 0.8,
+        "f1": 0.8571428571428571,
+        "support": 60
+      }
+    ]
+  },
+  "severity": {
+    "exactAccuracy": 0.73,
+    "meanDistance": 0.27,
+    "exact": 73,
+    "offByOne": 27,
+    "offByTwoPlus": 0
+  },
+  "confidence": [
+    {
+      "confidenceBucket": "0.9–1.0",
+      "sampleCount": 51,
+      "actualAccuracy": 0.803921568627451
+    },
+    {
+      "confidenceBucket": "0.8–0.89",
+      "sampleCount": 38,
+      "actualAccuracy": 0.6578947368421053
+    },
+    {
+      "confidenceBucket": "0.7–0.79",
+      "sampleCount": 0,
+      "actualAccuracy": null
+    },
+    {
+      "confidenceBucket": "<0.7",
+      "sampleCount": 11,
+      "actualAccuracy": 0
+    }
+  ],
+  "hallucination": {
+    "status": "manual_review_required",
+    "rate": null
+  }
+}

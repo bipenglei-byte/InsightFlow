@@ -1,0 +1,136 @@
+{
+  "datasetVersion": "evaluation-dataset-v1",
+  "promptVersion": "feedback-analyzer-v3",
+  "provider": "siliconflow",
+  "model": "Qwen/Qwen3.5-4B",
+  "temperature": 0.1,
+  "runDate": "2026-08-14T07:34:12.255Z",
+  "sampleCount": 100,
+  "validCount": 100,
+  "schemaFailureRate": 0,
+  "category": {
+    "accuracy": 0.7,
+    "macroF1": 0.614474257500823,
+    "perClass": [
+      {
+        "label": "feature_request",
+        "precision": 1,
+        "recall": 0.9375,
+        "f1": 0.967741935483871,
+        "support": 16
+      },
+      {
+        "label": "bug",
+        "precision": 0.7647058823529411,
+        "recall": 0.65,
+        "f1": 0.7027027027027027,
+        "support": 20
+      },
+      {
+        "label": "performance",
+        "precision": 0.6956521739130435,
+        "recall": 1,
+        "f1": 0.8205128205128205,
+        "support": 16
+      },
+      {
+        "label": "ux",
+        "precision": 0.5,
+        "recall": 0.9166666666666666,
+        "f1": 0.6470588235294118,
+        "support": 12
+      },
+      {
+        "label": "pricing",
+        "precision": 0.6666666666666666,
+        "recall": 0.3333333333333333,
+        "f1": 0.4444444444444444,
+        "support": 12
+      },
+      {
+        "label": "content",
+        "precision": 0.6,
+        "recall": 0.75,
+        "f1": 0.6666666666666665,
+        "support": 12
+      },
+      {
+        "label": "customer_service",
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "support": 8
+      },
+      {
+        "label": "other",
+        "precision": 1,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "support": 4
+      }
+    ]
+  },
+  "intent": {
+    "accuracy": 0.85
+  },
+  "sentiment": {
+    "accuracy": 0.95,
+    "macroF1": 0.9218508042037453,
+    "perClass": [
+      {
+        "label": "positive",
+        "precision": 1,
+        "recall": 0.8333333333333334,
+        "f1": 0.9090909090909091,
+        "support": 24
+      },
+      {
+        "label": "neutral",
+        "precision": 0.7619047619047619,
+        "recall": 1,
+        "f1": 0.8648648648648648,
+        "support": 16
+      },
+      {
+        "label": "negative",
+        "precision": 1,
+        "recall": 0.9833333333333333,
+        "f1": 0.9915966386554621,
+        "support": 60
+      }
+    ]
+  },
+  "severity": {
+    "exactAccuracy": 0.75,
+    "meanDistance": 0.25,
+    "exact": 75,
+    "offByOne": 25,
+    "offByTwoPlus": 0
+  },
+  "confidence": [
+    {
+      "confidenceBucket": "0.9–1.0",
+      "sampleCount": 87,
+      "actualAccuracy": 0.7816091954022989
+    },
+    {
+      "confidenceBucket": "0.8–0.89",
+      "sampleCount": 7,
+      "actualAccuracy": 0.14285714285714285
+    },
+    {
+      "confidenceBucket": "0.7–0.79",
+      "sampleCount": 1,
+      "actualAccuracy": 0
+    },
+    {
+      "confidenceBucket": "<0.7",
+      "sampleCount": 5,
+      "actualAccuracy": 0.2
+    }
+  ],
+  "hallucination": {
+    "status": "manual_review_required",
+    "rate": null
+  }
+}

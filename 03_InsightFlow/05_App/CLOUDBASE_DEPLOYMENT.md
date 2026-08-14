@@ -36,3 +36,5 @@ tcb cloudrun deploy
 ```
 
 Select the intended CloudBase environment and verify that no unrelated service will be replaced. After deployment, validate `/api/health`, `/dashboard`, and the complete Demo Mode flow.
+
+Deploy from a clean Git archive or clean checkout. The CloudBase CLI packages its `--source` directory before Docker applies `.dockerignore`; do not point it at a working directory containing `.env.local` or build output.

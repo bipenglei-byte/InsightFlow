@@ -25,6 +25,7 @@ import {
   ChevronRight,
   Clipboard,
   Download,
+  X,
   RefreshCw,
   UploadCloud,
 } from "lucide-react";
@@ -115,6 +116,10 @@ const Section = ({
 
 function Dashboard() {
   const [range, setRange] = useState<keyof typeof sentimentData>("30 days");
+  const [selectedPain, setSelectedPain] = useState<(typeof painPoints)[number] | null>(null);
+  const evidence = selectedPain
+    ? selectedPain.supportingFeedbackIds.map((id) => feedback.find((item) => item.id === id)).filter(Boolean).slice(0, 4)
+    : [];
   return (
     <Page>
       <PageHeader
@@ -146,12 +151,7 @@ function Dashboard() {
                   <XAxis type="number" unit="%" />
                   <YAxis dataKey="name" type="category" width={110} />
                   <Tooltip />
-                  <Bar
-                    isAnimationActive={false}
-                    dataKey="percentage"
-                    fill="#2878d4"
-                    radius={[0, 4, 4, 0]}
-                  />
+                  <Bar isAnimationActive={false} dataKey="percentage" fill="#2878d4" radius={[0, 4, 4, 0]} onClick={(entry) => setSelectedPain(painPoints.find((item) => item.name === (entry as { name?: string }).name) || null)} cursor="pointer" />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -233,6 +233,27 @@ function Dashboard() {
           ))}
         </div>
       </Section>
+      {selectedPain && (
+        <div className="drawer-backdrop" onClick={() => setSelectedPain(null)}>
+          <aside className="evidence-drawer" onClick={(event) => event.stopPropagation()}>
+            <div className="section-title">
+              <div>
+                <div className="eyebrow">证据驾驶舱</div>
+                <h2 style={{ margin: "4px 0" }}>{selectedPain.name}</h2>
+                <p className="small">{selectedPain.feedbackCount} 条关联反馈 · 置信度 {selectedPain.confidence}%</p>
+              </div>
+              <button className="drawer-close" onClick={() => setSelectedPain(null)} aria-label="关闭证据面板"><X size={18} /></button>
+            </div>
+            <div className="alert info">AI 洞察只在有可追溯原始证据时展示。</div>
+            <div className="drawer-summary"><strong>AI 摘要</strong><p>{selectedPain.description}</p></div>
+            <div className="section-title"><h3 style={{ margin: 0 }}>支持证据</h3><span className="small">显示前 4 条</span></div>
+            <div className="drawer-evidence-list">
+              {evidence.map((item) => item && <div className="evidence" key={item.id}><div className="section-title"><strong>{item.id}</strong><span className="small">{sourceLabel(item.source)} · {item.date}</span></div><p>“{item.content}”</p><span className="small">评分 {item.rating} 星</span></div>)}
+            </div>
+            <div className="drawer-actions"><Link className="btn" href={`/evidence/${selectedPain.id}`}>查看全部证据</Link><Link className="btn primary" href={`/requirements/${requirements.find((item) => item.painPointId === selectedPain.id)?.id || "search-optimization"}`}>创建产品需求</Link></div>
+          </aside>
+        </div>
+      )}
     </Page>
   );
 }

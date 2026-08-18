@@ -137,7 +137,7 @@ V1 暴露 Intent 指令边界不足，导致大量语义错配。V2 强化输出
 
 ## 20 Next Steps
 
-优先扩展真实匿名评估集与人工审核，其次引入 Embedding-based Clustering、Confidence Calibration、生产持久化与可观测性。只有核心闭环经过真实用户验证后，再考虑 Feedback Source Integrations 和 Team Collaboration。
+优先完成固定任务走查、Bad Case 复测和可复核证据索引；在条件允许时再扩展真实匿名评估集与人工审核，其次引入 Embedding-based Clustering、Confidence Calibration、生产持久化与可观测性。真人用户验证当前尚未开展，因此不填写采纳率、满意度或效率提升数字。只有核心闭环经过真实用户验证后，再考虑 Feedback Source Integrations 和 Team Collaboration。
 
 ## 21 What I Learned
 

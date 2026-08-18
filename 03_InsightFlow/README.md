@@ -81,6 +81,10 @@ AI 提供 Severity、Impact 与 Confidence 等语义判断，PM 调整 Business 
 
 更多演示资料见 [06_Demo](./06_Demo/)；完整产品思考见 [Portfolio Case Study](./07_Portfolio/CASE_STUDY.md)。
 
+项目后续验证计划见 [MVP 验证与证据链优化方案](./07_Portfolio/MVP_VALIDATION_PLAN.md)，其中区分了已有离线证据、待完成真人测试、Bad Case 记录和作品集表述边界。
+
+2026-08-18 的工程验证、13 路由走查和离线评测复核见 [Validation Report](./07_Portfolio/VALIDATION_REPORT_2026-08-18.md)。
+
 ## Tech Stack
 
 - Next.js 16 / React 19 / TypeScript

@@ -96,3 +96,14 @@ The repository is public at https://github.com/bipenglei-byte/InsightFlow and th
 - Browser QA covered 13 routes at 1440px: 0 forbidden English UI strings and 0 detected layout overflows.
 - Ten Chinese demo screenshots were regenerated.
 - CloudBase version `insightflow-003` was deployed with 100% traffic. `/api/health`, `/dashboard`, `/requirements`, `/prd/search-optimization`, and `/states` returned HTTP 200 and their expected Chinese markers.
+
+## 18. Evidence-chain Verification — 2026-08-18
+
+- Unit tests: 18/18 passed
+- TypeScript, ESLint, and production build: passed
+- Release audit: 144 files scanned; 0 secret findings and 0 private-path findings
+- Browser QA: 13 routes passed; 0 forbidden English UI strings and 0 detected horizontal layout overflows
+- `pnpm eval:compile` reproduced the stored 100-sample V1–V3 metrics
+- Playwright was added as an explicit development dependency because the existing QA script was not reproducible from `package.json`
+- Human user testing remains not performed; no adoption, satisfaction, time-saving, or commercial-effect claims are made
+- Detailed evidence: `07_Portfolio/VALIDATION_REPORT_2026-08-18.md`

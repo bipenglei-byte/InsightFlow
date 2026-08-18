@@ -38,3 +38,18 @@ The untouched `manual_review_v3.csv` remains available for later independent hum
 
 ## 9. Regression Dataset and Limitations
 The 20-sample regression set covers category, intent, sentiment, severity, and user-need boundaries. The primary dataset is synthetic, uses controlled variants, and has single-annotator ground truth; reported results should not be generalized to production traffic.
+
+## 10. Additional Evaluation Dimensions
+
+| Dimension | Status |
+| --- | --- |
+| Schema Validity | Automated; all V1–V3 outputs passed schema validation |
+| Evidence ID Validity | Automated; unknown feedback IDs are rejected |
+| Priority Consistency | Automated; formula, clamp, and P0–P3 boundaries are unit-tested |
+| Failure Recovery | Automated; retry merge preserves successful feedback and avoids duplicates |
+| Evidence Precision | Pending independent human review |
+| Evidence Coverage | Pending independent human review |
+| User Need Quality | AI_PROXY only; not Human Evaluation |
+| Requirement Quality | Pending independent human review |
+
+The stored V1–V3 results were recompiled successfully on 2026-08-18. No new model calls were made, so this verification confirms reproducibility of the stored metrics rather than a new evaluation run.

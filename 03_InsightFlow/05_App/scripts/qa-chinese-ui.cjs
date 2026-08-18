@@ -56,7 +56,7 @@ const screenshots = {
   const failures = [];
 
   for (const route of routes) {
-    await page.goto(`http://127.0.0.1:3030${route}`, {
+    await page.goto(`http://localhost:3030${route}`, {
       waitUntil: "domcontentloaded",
       timeout: 60000,
     });
